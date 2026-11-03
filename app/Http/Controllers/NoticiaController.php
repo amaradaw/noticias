@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Comentario;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+
 
 class NoticiaController extends Controller
 {
@@ -23,9 +26,15 @@ class NoticiaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+     public function index(): View
     {
-        //
+        $noticias = Noticia::withCount('comentarios')
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
+
+        $totalComentarios = Comentario::count();
+
+        return view('noticia.index', compact('noticias', 'totalComentarios'));
     }
 
     /**
