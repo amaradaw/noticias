@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-
 class Comentario extends Model
 {
-    protected $table = 'comentario';
+    protected $table = 'Comentario';
 
     protected $fillable = ['noticia_id', 'mensaje', 'valoracion'];
 
@@ -22,6 +21,7 @@ class Comentario extends Model
     {
         return $this->created_at->diffInMinutes(now()) < 5;
     }
+
 
     public function minutosRestantes(): int
     {
