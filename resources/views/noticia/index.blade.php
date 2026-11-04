@@ -2,7 +2,6 @@
 
 @section('title', 'Banditore · Portada y Noticias')
 
-{{-- 1. Noticia Destacada Principal (Hero Banner estilo Jumbotron) --}}
 @section('hero')
     @if(isset($noticias) && $noticias->isNotEmpty())
         @php
@@ -39,7 +38,6 @@
     @endif
 @endsection
 
-{{-- 2. Tarjetas Secundarias Destacadas (2 Columnas) --}}
 @section('featured')
     @if(isset($noticias) && $noticias->count() > 1)
         <div class="row mb-2">
@@ -72,7 +70,6 @@
     @endif
 @endsection
 
-{{-- 3. Contenido Principal: Listado en dos columnas (col-md-8 y col-md-4) --}}
 @section('content')
 <div class="row g-5">
     {{-- Columna Principal de Artículos --}}
