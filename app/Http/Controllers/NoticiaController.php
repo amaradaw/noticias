@@ -68,7 +68,7 @@ class NoticiaController extends Controller
     }
 
     /**
-     * Muestra el formulario de edición (validando la regla de los 20 minutos).
+     * validando la regla de los 20 minutos
      */
     public function edit(string $id)
     {
@@ -79,11 +79,11 @@ class NoticiaController extends Controller
             return redirect()->route('noticia.index')->with('error', 'No se puede editar la noticia porque han transcurrido 20 minutos o más desde su publicación.');
         }
 
-        return view('noticia.edit', compact('noticia'));
+        return view('noticia.edit', compact('noticia')); //['noticia' => $noticia]
     }
 
     /**
-     * Actualiza la noticia en la base de datos (validando la regla de los 20 minutos).
+     * (validando la regla de los 20 minutos
      */
     public function update(Request $request, string $id)
     {
