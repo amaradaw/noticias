@@ -16,7 +16,7 @@ class Comentario extends Model
         return $this->belongsTo(Noticia::class, 'noticia_id');
     }
 
-    // Regla: No se puede editar ni borrar si lleva 5 minutos o más
+    //No se puede editar ni borrar si lleva 5 minutos o más
     public function sePuedeModificarOBorrar(): bool
     {
         return $this->created_at->diffInMinutes(now()) < 5;
@@ -25,6 +25,6 @@ class Comentario extends Model
 
     public function minutosRestantes(): int
     {
-        return max(0, 5 - $this->created_at->diffInMinutes(now()));
+        return max(0, 5 - $this->created_at->diffInMinutes(now())); //cuantos minutos quedan
     }
 }
