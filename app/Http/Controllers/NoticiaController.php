@@ -74,7 +74,7 @@ class NoticiaController extends Controller
     {
         $noticia = Noticia::findOrFail($id);
 
-        // Regla del profesor: No se puede editar si han pasado 20 minutos o más
+        //No se puede editar si han pasado 20 minutos o más
         if (!$noticia->sePuedeEditar()) {
             return redirect()->route('noticia.index')->with('error', 'No se puede editar la noticia porque han transcurrido 20 minutos o más desde su publicación.');
         }
@@ -104,13 +104,12 @@ class NoticiaController extends Controller
     }
 
     /**
-     * Elimina la noticia (validando que no tenga comentarios).
+     * Elimina la noticia.
      */
     public function destroy(string $id)
     {
         $noticia = Noticia::findOrFail($id);
 
-        // Regla del profesor: Solo se puede borrar si la noticia no tiene comentarios
         if (!$noticia->sePuedeBorrar()) {
             return redirect()->route('noticia.index')->with('error', 'No se puede eliminar la noticia porque tiene comentarios asociados.');
         }
