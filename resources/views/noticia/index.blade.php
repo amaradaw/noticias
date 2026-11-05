@@ -1,6 +1,6 @@
 @extends('template.base')
 
-@section('title', 'Banditore · Portada y Noticias')
+@section('title', 'NoticieroAmara · Portada y Noticias')
 
 @section('hero')
     @if(isset($noticias) && $noticias->isNotEmpty())
@@ -197,7 +197,7 @@
             {{-- Módulo 1: Acerca del Blog --}}
             <div class="p-4 mb-3 bg-light rounded border">
                 <h5 class="fst-italic fw-bold text-dark mb-2">
-                    <i class="bi bi-info-circle text-primary me-1"></i> Sobre Banditore
+                    <i class="bi bi-info-circle text-primary me-1"></i> Sobre NoticieroAmara
                 </h5>
                 <p class="mb-0 small text-secondary">
                     Portal de noticias y debate participativo. Publica tus artículos en texto plano o formato Markdown, y participa valorando y comentando las noticias de la comunidad.

@@ -32,7 +32,7 @@ class NoticiaController extends Controller
 
         $totalComentarios = Comentario::count();
 
-        return view('noticia.index', compact('noticias', 'totalComentarios'));
+        return view('noticia.index', compact('noticias', 'totalComentarios')); //['noticia' => $noticia]
     }
 
     /**
@@ -64,7 +64,7 @@ class NoticiaController extends Controller
     public function show(string $id): View
     {
         $noticia = Noticia::with('comentarios')->findOrFail($id);
-        return view('noticia.show', compact('noticia'));
+        return view('noticia.show', compact('noticia')); //['noticia' => $noticia]
     }
 
     /**

@@ -59,7 +59,7 @@ class ComentarioController extends Controller
             ->with('error', 'El plazo de 5 minutos para editar este comentario ha expirado.');
     }
 
-    return view('comentario.edit', compact('comentario'));
+    return view('comentario.edit', compact('comentario')); // ['noticia' => $noticia]
 }
 
 
